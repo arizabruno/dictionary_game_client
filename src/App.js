@@ -16,7 +16,7 @@ import { DicionarioProvider } from './DicionarioContext';
 import Room from './models/Room';
 import DisplayGuesses from './DisplayGuesses';
 
-const socket = io.connect("http://localhost:8080");
+const socket = io.connect("https://dictionarium-app.herokuapp.com");
 
 function App() {
 
