@@ -14,9 +14,9 @@ import { Alert, Snackbar } from '@mui/material';
 import io from 'socket.io-client';
 import { DicionarioProvider } from './DicionarioContext';
 import Room from './models/Room';
+import DisplayGuesses from './DisplayGuesses';
 
 const socket = io.connect("http://localhost:8080");
-
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
       setOpenToast(true);
       setStatusMessage(status.msg);
     });
-  }, [socket]);
+  }, []);
 
   const handleCloseToast = (event, reason) => {
     if (reason === 'clickaway') {
@@ -51,6 +51,7 @@ function App() {
           <Route path="/chooseWord" element={<ChooseWord socket={socket}/>}/>
           <Route path="/chooseRoom" element={<ChooseRoom socket={socket}/>}/>
           <Route path="/guessDefinition" element={<GuessDefinition socket={socket}/>}/>
+          <Route path="/displayGuesses" element={<DisplayGuesses socket={socket}/>}/>
         </Routes>
         <Snackbar open={openToast} autoHideDuration={6000} onClose={handleCloseToast}>
         <Alert onClose={handleCloseToast} severity="error" sx={{ width: '100%' }}>

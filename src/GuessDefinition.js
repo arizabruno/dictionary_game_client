@@ -1,5 +1,6 @@
 import { Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DicionarioContext from './DicionarioContext';
 
 function GuessDefinition(props) {
@@ -10,17 +11,23 @@ function GuessDefinition(props) {
     const [userName, setUserName] = useState("");
     const [definition, setDefinition] = useState("");
     const room = useContext(DicionarioContext);
+    const navigate = useNavigate();
 
 
     useEffect(() => {
         socket.on("word_updated", (newWord) => {
             setWord(newWord);
         });
+
+        socket.on("guess_time_out", () => {
+            navigate("/");
+        })
     }, [socket, word]);
 
     const submitGuess = () => {
 
         const guess ={
+            word: word,
             sid: socket.id,
             definition: definition,
             user:userName
