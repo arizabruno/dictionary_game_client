@@ -1,0 +1,92 @@
+/**********************************
+* GENERAL
+**********************************/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration: none;
+}
+
+/**********************************
+* SHARED CLASSES
+**********************************/
+
+.default-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+/**********************************
+* MAIN (APP.JS)
+**********************************/
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/**********************************
+* HOME
+**********************************/
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home button {
+    margin: 10px;
+    width: 200px;
+}
+
+/**********************************
+* CREATE ROOM
+**********************************/
+
+.create-room button {
+    margin-top: 30px;
+}
+
+/**********************************
+* CHOOSE WORD
+**********************************/
+
+.choose-word button {
+    margin: 10px;
+    width: 200px;
+}
+
+.choose-word input {
+    width: 250px;
+}
+
+
+.choose-word textarea {
+    width: 250px;
+}
+
+
+#respostas-enviadas {
+    text-align: center;
+}
+
+
+/**********************************
+* GUESS DEFINITION
+**********************************/
+
+.guess-definition button {
+    margin-top:30px;
+}
