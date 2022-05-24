@@ -1,6 +1,7 @@
 import { Button, TextField } from '@mui/material';
-import React, {useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DicionarioContext from './DicionarioContext';
 
 function ChooseRoom(props) {
 
@@ -8,10 +9,14 @@ function ChooseRoom(props) {
 
     const navigate = useNavigate();
 
-    const [room, setRoom] = useState("");
+    const [roomToBeEntered, setRoomToBeEntered] = useState("");
+    
+    const room = useContext(DicionarioContext);
 
     const joinRoom = () => {
-        socket.emit("join_room", room);
+        room.name = roomToBeEntered;
+        setTimeout(() => {}, 30000);
+        socket.emit("join_room", roomToBeEntered);
     }
 
     useEffect(() => {
@@ -25,7 +30,7 @@ function ChooseRoom(props) {
             <TextField
                 id="outlined-helperText"
                 label="Nome da sala"
-                onChange={(e) => {setRoom(e.target.value)}}
+                onChange={(e) => {setRoomToBeEntered(e.target.value)}}
                 />
             <br></br>
             <Button variant="outlined" onClick={joinRoom}>Entrar</Button>

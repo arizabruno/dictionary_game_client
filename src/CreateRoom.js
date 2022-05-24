@@ -11,17 +11,18 @@ function CreateRoom(props) {
 
     const [roomName, setRoomName] = useState("");
 
-    const [store, setStore] = useContext(DicionarioContext);
+    const room = useContext(DicionarioContext);
     
 
     useEffect(() => {
         socket.on("room_created", () => {
+            
             navigate(`/chooseWord`);
         });
     }, [socket, navigate]);
 
     const create = () => {
-        setStore({room:roomName});
+        room.name = roomName;
         console.log("Creating new room");
         socket.emit("new_room", roomName);
     }

@@ -13,19 +13,14 @@ import GuessDefinition from './GuessDefinition';
 import { Alert, Snackbar } from '@mui/material';
 import io from 'socket.io-client';
 import { DicionarioProvider } from './DicionarioContext';
+import Room from './models/Room';
 
-
-
+const socket = io.connect("http://localhost:8080");
 
 
 function App() {
 
-  const socket = io.connect("http://localhost:8080");
-
-
-  const [store, setStore] = useState({
-    room:""
-  });
+  const room = new Room();
 
   const [openToast, setOpenToast] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
@@ -47,7 +42,7 @@ function App() {
 
   return (
 
-  <DicionarioProvider value={[store, setStore]}>
+  <DicionarioProvider value={room}>
     <BrowserRouter>
       <div className='main'>
         <Routes>
