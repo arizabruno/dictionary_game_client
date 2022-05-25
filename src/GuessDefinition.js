@@ -6,23 +6,11 @@ import DicionarioContext from './DicionarioContext';
 function GuessDefinition(props) {
 
     const socket = props.socket;
-
     const [word, setWord] = useState("");
     const [userName, setUserName] = useState("");
     const [definition, setDefinition] = useState("");
     const room = useContext(DicionarioContext);
     const navigate = useNavigate();
-
-
-    useEffect(() => {
-        socket.on("word_updated", (newWord) => {
-            setWord(newWord);
-        });
-
-        socket.on("guess_time_out", () => {
-            navigate("/");
-        })
-    }, [socket, word]);
 
     const submitGuess = () => {
 
@@ -33,10 +21,19 @@ function GuessDefinition(props) {
             user:userName
         }
 
-        // const guess = new Guess(socket.id, definition, userName);
         console.log({guess, room: room.name});
         socket.emit("new_guess", {guess, room: room.name});
     }
+
+    useEffect(() => {
+        socket.on("word_updated", (newWord) => {
+            setWord(newWord);
+        });
+
+        socket.on("guess_time_out", () => {
+            navigate("/");
+        })
+    }, [socket, word, navigate]);
 
     return (
         <div className='guess-definition'>

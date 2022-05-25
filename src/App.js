@@ -1,11 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import Home from './Home';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter, Routes,Route,} from "react-router-dom";
 import CreateRoom from './CreateRoom';
 import ChooseWord from './ChooseWord';
 import ChooseRoom from './ChooseRoom';
@@ -21,16 +17,8 @@ const socket = io.connect("https://dictionarium-app.herokuapp.com");
 function App() {
 
   const room = new Room();
-
   const [openToast, setOpenToast] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
-
-  useEffect(() => {
-    socket.on("status", (status) => {
-      setOpenToast(true);
-      setStatusMessage(status.msg);
-    });
-  }, []);
 
   const handleCloseToast = (event, reason) => {
     if (reason === 'clickaway') {
@@ -39,6 +27,13 @@ function App() {
 
     setOpenToast(false);
   };
+
+  useEffect(() => {
+    socket.on("status", (status) => {
+      setOpenToast(true);
+      setStatusMessage(status.msg);
+    });
+  }, []);
 
   return (
 
@@ -53,7 +48,7 @@ function App() {
           <Route path="/guessDefinition" element={<GuessDefinition socket={socket}/>}/>
           <Route path="/displayGuesses" element={<DisplayGuesses socket={socket}/>}/>
         </Routes>
-        <Snackbar open={openToast} autoHideDuration={6000} onClose={handleCloseToast}>
+        <Snackbar open={openToast} autoHideDuration={2000} onClose={handleCloseToast}>
         <Alert onClose={handleCloseToast} severity="error" sx={{ width: '100%' }}>
           {statusMessage}
         </Alert>

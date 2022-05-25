@@ -6,11 +6,8 @@ import DicionarioContext from './DicionarioContext';
 function ChooseRoom(props) {
 
     const socket = props.socket;
-
     const navigate = useNavigate();
-
     const [roomToBeEntered, setRoomToBeEntered] = useState("");
-    
     const room = useContext(DicionarioContext);
 
     const joinRoom = () => {

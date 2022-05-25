@@ -10,9 +10,7 @@ function DisplayGuesses(props) {
 
     const room = useContext(DicionarioContext);
     const [guesses, setGuesses] = useState(room.guesses);
-
     const [numberOfGuesses, setNumberOfGuesses] = useState("");
-
     const navigate = useNavigate();
 
 
@@ -21,6 +19,8 @@ function DisplayGuesses(props) {
     }
 
     const finish = () => {
+        room.guesses = {};
+        room.name = "";
         navigate("/");
     }
 

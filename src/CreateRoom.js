@@ -6,26 +6,22 @@ import DicionarioContext from './DicionarioContext';
 function CreateRoom(props) {
 
     const socket = props.socket;
-
     const navigate = useNavigate();
-
     const [roomName, setRoomName] = useState("");
-
     const room = useContext(DicionarioContext);
-    
-
-    useEffect(() => {
-        socket.on("room_created", () => {
-            
-            navigate(`/chooseWord`);
-        });
-    }, [socket, navigate]);
 
     const create = () => {
         room.name = roomName;
         console.log("Creating new room");
         socket.emit("new_room", roomName);
     }
+    
+    useEffect(() => {
+        socket.on("room_created", () => {
+            
+            navigate(`/chooseWord`);
+        });
+    }, [socket, navigate]);
 
     return (
         <div className='create-room default-page'>

@@ -7,12 +7,24 @@ function ChooseWord(props) {
 
     const socket = props.socket;
     const room = useContext(DicionarioContext);
-
     const [word, setWord] = useState(room.guesses[socket.id]?.word);
     const [definition, setDefinition] = useState(room.guesses[socket.id]?.definition);
     const [numberOfGuesses, setNumberOfGuesses] = useState(room.guesses[socket.id] ? Object.keys(room.guesses).length - 1 : Object.keys(room.guesses).length);
-
     const navigate = useNavigate();
+
+    const done = () => {
+
+        const guess = {
+            word: word,
+            sid: socket.id,
+            definition: definition,
+            user:"Resposta correta"
+        }
+        
+        room.guesses[guess.sid] = guess;
+        socket.emit("no_more_guesses", {room:room.name});
+        navigate("/displayGuesses");
+    }
 
     useEffect(() => {
         console.log(room);
@@ -29,20 +41,6 @@ function ChooseWord(props) {
             }
           });
     }, [socket, word, room]);
-
-    const done = () => {
-
-        const guess = {
-            word: word,
-            sid: socket.id,
-            definition: definition,
-            user:"Resposta correta"
-        }
-        
-        room.guesses[guess.sid] = guess;
-        socket.emit("no_more_guesses", {room:room.name});
-        navigate("/displayGuesses");
-    }
 
     return (
         <div className='choose-word default-page'>
