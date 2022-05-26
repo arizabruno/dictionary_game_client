@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, {useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DicionarioContext from './DicionarioContext';
+import Vocabulary from './vocabulary.json';
 
 function ChooseRoom(props) {
 
@@ -26,11 +27,11 @@ function ChooseRoom(props) {
         <div className='choose-room default-page'>
             <TextField
                 id="outlined-helperText"
-                label="Nome da sala"
+                label={Vocabulary[room.language].roomName}
                 onChange={(e) => {setRoomToBeEntered(e.target.value)}}
                 />
             <br></br>
-            <Button variant="outlined" onClick={joinRoom}>Entrar</Button>
+            <Button variant="outlined" onClick={joinRoom}>{Vocabulary[room.language].enterRoomBtnLabel}</Button>
         </div>
     );
 }

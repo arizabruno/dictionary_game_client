@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DicionarioContext from './DicionarioContext';
+import Vocabulary from './vocabulary.json';
 
 function ChooseWord(props) {
 
@@ -18,7 +19,7 @@ function ChooseWord(props) {
             word: word,
             sid: socket.id,
             definition: definition,
-            user:"Resposta correta"
+            user:Vocabulary[room.language].correctAnswer
         }
         
         room.guesses[guess.sid] = guess;
@@ -46,7 +47,7 @@ function ChooseWord(props) {
         <div className='choose-word default-page'>
             <TextField
                 id="palavra-text-field"
-                label="Palavra"
+                label={Vocabulary[room.language].word}
                 className='text-field'
                 defaultValue={word}
                 onChange={(e) => {setWord(e.target.value)}}
@@ -55,7 +56,7 @@ function ChooseWord(props) {
 
             <TextField
                 id="outlined-multiline-static"
-                label="Definição"
+                label={Vocabulary[room.language].definition}
                 className='text-field'
                 multiline
                 rows={10}
@@ -66,11 +67,11 @@ function ChooseWord(props) {
             <br></br>
             <div>
                 <div id="respostas-enviadas">{numberOfGuesses}</div>
-                respostas enviadas
+                {Vocabulary[room.language].guessesSent}
             </div>
             <br></br>
 
-           <Button variant="outlined" color="primary" onClick={done}>Pronto</Button>
+           <Button variant="outlined" color="primary" onClick={done}>{Vocabulary[room.language].done}</Button>
         </div>
     );
 }

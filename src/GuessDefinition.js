@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DicionarioContext from './DicionarioContext';
+import Vocabulary from './vocabulary.json';
 
 function GuessDefinition(props) {
 
@@ -38,11 +39,11 @@ function GuessDefinition(props) {
     return (
         <div className='guess-definition'>
             <div>
-                Palavra: <div>{word}</div>
+            {Vocabulary[room.language].word}: <div>{word}</div>
             </div>
             <br></br>
             <TextField
-                label="Definição"
+                label={Vocabulary[room.language].definition}
                 className='text-field'
                 multiline
                 rows={10}
@@ -52,12 +53,12 @@ function GuessDefinition(props) {
             <br></br>
             <TextField
                 id="palavra-text-field"
-                label="Nome"
+                label={Vocabulary[room.language].name}
                 className='text-field'
                 onChange={(e) => {setUserName(e.target.value)}}
                 />
             <br></br>
-            <Button variant="outlined" color="primary" onClick={submitGuess}>Pronto</Button>
+            <Button variant="outlined" color="primary" onClick={submitGuess}>{Vocabulary[room.language].done}</Button>
             
         </div>
     );

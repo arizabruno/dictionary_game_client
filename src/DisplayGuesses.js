@@ -5,6 +5,7 @@ import { Button, Card, CardContent, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import Vocabulary from './vocabulary.json';
 
 function DisplayGuesses(props) {
 
@@ -31,7 +32,7 @@ function DisplayGuesses(props) {
 
     return (
         <div className='display-guesses'>
-            <p><strong>Sala: </strong>"{room.name}" | <strong>Participantes: </strong>{numberOfGuesses}</p>
+            <p><strong>{Vocabulary[room.language].room}:</strong> "{room.name}"| <strong>{Vocabulary[room.language].players}: </strong> {numberOfGuesses}</p>
             <For in={guesses} as={(guess, {sid}) =>
                 <Card variant="outlined" className='guess-card'>
                     <CardContent>
@@ -45,8 +46,8 @@ function DisplayGuesses(props) {
                 </Card>
             }/>
             <div className='buttons-container'>
-                <Button variant="outlined" color="primary" onClick={back}><ArrowBackIcon/> Voltar</Button>
-                <Button variant="outlined" color="primary" onClick={finish}><ExitToAppIcon/> Finalizar</Button>
+                <Button variant="outlined" color="primary" onClick={back}><ArrowBackIcon/>{Vocabulary[room.language].back}</Button>
+                <Button variant="outlined" color="primary" onClick={finish}><ExitToAppIcon/>{Vocabulary[room.language].finish}</Button>
             </div>
         </div>
     );

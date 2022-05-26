@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DicionarioContext from './DicionarioContext';
+import Vocabulary from './vocabulary.json';
 
 function CreateRoom(props) {
 
@@ -27,11 +28,11 @@ function CreateRoom(props) {
         <div className='create-room default-page'>
             <TextField
                 id="outlined-helperText"
-                label="Nome da sala"
+                label={Vocabulary[room.language].roomName}
                 helperText="Este será o nome visto pelos outros usarios para entrar na sala."
                 onChange={(e) => {setRoomName(e.target.value)}}
                 />
-            <Button variant="outlined" onClick={create}>Criar</Button>
+            <Button variant="outlined" onClick={create}>{Vocabulary[room.language].create}</Button>
         </div>
     );
 }

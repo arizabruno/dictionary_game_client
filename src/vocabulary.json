@@ -1,0 +1,37 @@
+{
+    "en": {
+        "chooseWordBtnLabel":"Choose word",
+        "guessDefinitionBtnLabel":"Guess definition",
+        "enterRoomBtnLabel":"Enter",
+        "guessesSent":"Guesses sent",
+        "done":"done",
+        "create":"create",
+        "room":"room",
+        "players":"players",
+        "back":"back",
+        "finish":"finish",
+        "word":"Word",
+        "roomName":"Room name",
+        "definition":"Definition",
+        "correctAnswer":"Correct answer",
+        "name":"Name"
+    },
+
+    "pt": {
+        "chooseWordBtnLabel":"Escolher Palavra",
+        "guessDefinitionBtnLabel":"Advinhar definição",
+        "enterRoomBtnLabel":"Entrar",
+        "guessesSent":"Respostas enviadas",
+        "done":"pronto",
+        "create":"criar",
+        "room":"sala",
+        "players":"jogadores",
+        "back":"voltar",
+        "finish":"finalizar",
+        "word":"Palavra",
+        "roomName":"Nome da sala",
+        "definition":"Definição",
+        "correctAnswer":"Resposta correta",
+        "name":"Nome"
+    }
+}
