@@ -1,6 +1,6 @@
 # Dictionarium Game
 
-Note: currently, the application is only in Portuguese.
+## Access to the application
 
 Working application:
 - Client: https://dictionarium.surge.sh
@@ -9,7 +9,14 @@ The server is running on:
 - Server: https://dictionarium-app.herokuapp.com
 - Server's code: https://github.com/arizabruno/dictionary_game_server
 
+The application supports both English and Portguese.
+
+<br>
+
+
 ## Introduction 
+
+<br>
 
 ### The original game
 
@@ -24,6 +31,8 @@ The other players will vote on which of the definitions they think are the corre
 The host will be keep tracking of their votes. After all of the players have guesses the host will anounce the correct definition as well as the guesses writers. Players who have voted in the correct definition, as well as players who have written a definition that was voted will receive points. If the correct definition was not voted by anyplayer the host should receive points as well. 
 
 There is no fixed pointing system but bellow is a suggestion fo one:
+
+<br>
 
 ### The application
 
@@ -41,6 +50,8 @@ The application could be further devloped to add an actual dicitionary in the ap
 
 </center>
 
+<br>
+
 ## Demonstration
 
 Bellow are screenshots of the application working.
@@ -48,38 +59,38 @@ Bellow are screenshots of the application working.
 - Home screen:
 
 <p align="center">
-<img src="./Screenshots/Home.png" alt="Home" width="200"/>
+<img src="./Screenshots/en/Home.png" alt="Home" width="200"/>
 </p>
 
 - The player who will choose the word will create a room:
 
 <p align="center">
-<img src="./Screenshots/CreateRoom.png" alt="Creating a room" width="200"/>
+<img src="./Screenshots/en/CreateRoom.png" alt="Creating a room" width="200"/>
 </p>
 
 - The other players enter the room create:
 
 <p align="center">
-<img src="./Screenshots/ChooseRoom.png" alt="Choosing a room" width="200"/>
+<img src="./Screenshots/en/ChooseRoom.png" alt="Choosing a room" width="200"/>
 </p>
 
 - The host of the room will choose a word:
 
 <p align="center">
-<img src="./Screenshots/ChooseWord.png" alt="Choosing a word" width="200"/>
+<img src="./Screenshots/en/ChooseWord.png" alt="Choosing a word" width="200"/>
 </p>
 
 
 - The word will be instantly be shown in the other players's screen so they can guess its definition:
 
 <p align="center">
-<img src="./Screenshots/GuessDefinition.png" alt="Guessing the definition" width="200"/>
+<img src="./Screenshots/en/GuessDefinition.png" alt="Guessing the definition" width="200"/>
 </p>
 
 - The host will read all of the guesses to the other players so they can vote:
 
 <p align="center">
-<img src="./Screenshots/DisplayGuesses.png" alt="Displaying the Guesses" width="200"/>
+<img src="./Screenshots/en/DisplayGuesses.png" alt="Displaying the Guesses" width="200"/>
 </p>
 
 

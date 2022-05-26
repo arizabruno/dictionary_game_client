@@ -14,7 +14,8 @@
         "roomName":"Room name",
         "definition":"Definition",
         "correctAnswer":"Correct answer",
-        "name":"Name"
+        "name":"Name",
+        "createroomTextHint":"This will be the name seen by the other players to enter the room."
     },
 
     "pt": {
@@ -32,6 +33,7 @@
         "roomName":"Nome da sala",
         "definition":"Definição",
         "correctAnswer":"Resposta correta",
-        "name":"Nome"
+        "name":"Nome",
+        "createroomTextHint":"Este será o nome visto pelos outros usarios para entrar na sala."
     }
 }

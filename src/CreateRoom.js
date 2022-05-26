@@ -29,7 +29,7 @@ function CreateRoom(props) {
             <TextField
                 id="outlined-helperText"
                 label={Vocabulary[room.language].roomName}
-                helperText="Este será o nome visto pelos outros usarios para entrar na sala."
+                helperText={Vocabulary[room.language].createroomTextHint}
                 onChange={(e) => {setRoomName(e.target.value)}}
                 />
             <Button variant="outlined" onClick={create}>{Vocabulary[room.language].create}</Button>
