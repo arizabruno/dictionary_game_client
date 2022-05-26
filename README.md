@@ -1,20 +1,20 @@
-# Dictionarium Game
+# Dictionarium PWA
 
 ## Access to the application
 
 Working application:
 - Client: https://dictionarium.surge.sh
 
-The server is running on:
-- Server: https://dictionarium-app.herokuapp.com
-- Server's code: https://github.com/arizabruno/dictionary_game_server
-
 The application supports both English and Portguese.
 
+**Note:** this repository contains only the frontend code for the web application. You can find the backend code and url bellow:
+- Server: https://dictionarium-app.herokuapp.com
+- Server's code: https://github.com/arizabruno/dictionary_game_server
 <br>
 
 
 ## Introduction 
+---
 
 <br>
 
@@ -53,7 +53,7 @@ The application could be further devloped to add an actual dicitionary in the ap
 <br>
 
 ## Demonstration
-
+---
 Bellow are screenshots of the application working.
 
 - Home screen:
@@ -93,5 +93,8 @@ Bellow are screenshots of the application working.
 <img src="./Screenshots/en/DisplayGuesses.png" alt="Displaying the Guesses" width="200"/>
 </p>
 
+## License
+---
 
+Code released under the [MIT License](LICENSE.md).
 
