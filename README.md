@@ -14,7 +14,6 @@ The application supports both English and Portguese.
 
 
 ## Introduction 
----
 
 <br>
 
@@ -53,7 +52,7 @@ The application could be further devloped to add an actual dicitionary in the ap
 <br>
 
 ## Demonstration
----
+
 Bellow are screenshots of the application working.
 
 - Home screen:
@@ -94,7 +93,7 @@ Bellow are screenshots of the application working.
 </p>
 
 ## License
----
+
 
 Code released under the [MIT License](LICENSE.md).
 
