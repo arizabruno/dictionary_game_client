@@ -1,21 +1,10 @@
 # Dictionarium PWA
 
-## Access to the application
-
-Working application:
-- Client: https://dictionarium.surge.sh
-
-The application supports both English and Portguese.
-
 **Note:** this repository contains only the frontend code for the web application. You can find the backend code and its url bellow:
 - Server: https://dictionarium-app.herokuapp.com
 - Server's code: https://github.com/arizabruno/dictionary_game_server
-<br>
-
 
 ## Introduction 
-
-<br>
 
 ### The original game
 
