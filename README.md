@@ -1,7 +1,7 @@
 # Dictionarium PWA
 
 **Note:** this repository contains only the frontend code for the web application. You can find the backend code and its url bellow:
-- Server: https://dictionarium-app.herokuapp.com
+
 - Server's code: https://github.com/arizabruno/dictionary_game_server
 
 ## Introduction 
